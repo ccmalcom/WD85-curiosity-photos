@@ -14,7 +14,8 @@
 <body>
     <div id="introSection">
         <h1>Welcome!</h1>
-        <p>Use this site to see photos from the Mars Curiosity Rover by date as well as by camera. The Curiosity Rover landed on August 6,
+        <p>Use this site to see photos from the Mars Curiosity Rover by date as well as by camera. The Curiosity Rover
+            landed on August 6,
             2012, so photos before that date will not be available.</p>
     </div>
     <div id="constraints">
@@ -23,7 +24,7 @@
             <input type="date" name="inputDate" id="inputDate" min="2012-08-06" max="2021-13-13" required>
             <br>
             <label for="whichCamera">Which Camera? (All will show photos from all cameras)</label>
-            <select class="form-select"  aria-label="default select example" id = 'cameraSelect'>
+            <select class="form-select" aria-label="default select example" id='cameraSelect'>
                 <option value='0' selected>All</option>
                 <option value="fhaz">FHAZ (Front Hazard Avoidance Camera)</option>
                 <option value="rhaz">RHAZ (Rear Hazard Avoidance Camera)</option>
@@ -32,20 +33,29 @@
                 <option value="mahli">MAHLI (Mars Hand Lens Imager)</option>
                 <option value="mardi">MARDI (Mars Descent Imager)</option>
                 <option value="navcam">NAVCAM (Navigation Camera)</option>
-              </select>
+            </select>
             <button id='submit'>Submit</button>
         </form>
     </div>
-    <div id = 'info'>
+    <div id='info'>
         <p id='totalImg'></p>
         <p id="clickPhoto">Click Photo to see Full Size</p>
     </div>
-    
+
     <div class="row row-cols-1 row-cols-md-5 g-4" id='imgHere'>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
     <script src="script.js"></script>
 </body>
 
