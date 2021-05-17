@@ -13,13 +13,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="typeWriter()">
+<body onload="typeWriter()"> 
+    <header>
+        <h1><i class="fas fa-space-shuttle"></i>NASA Curiosity Rover Photos</h1>
+    </header>
     <div id="introSection">
         <h1>Welcome!</h1>
         <p id='thisText'>Use this site to see photos from the Mars Curiosity Rover by date as well as by camera. The Curiosity Rover landed on August 6, 2012, so photos before that date will not be available.</p>
     </div>
     <div id="constraints">
         <form>
+            <h3>Search: </h3>
             <label for="inputDate">Date of photos: </label>
             <input type="date" name="inputDate" id="inputDate" min="2012-08-06" max="2021-13-13" required>
             <br>
@@ -57,6 +61,7 @@
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/63088848de.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

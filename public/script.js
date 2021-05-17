@@ -19,16 +19,43 @@ document.getElementById("inputDate").setAttribute("max", today);
 let submitBtn = document.querySelector('#button')
 let submitForm = document.querySelector('form')
 let dateOfPhotos = document.querySelector('#inputDate')
-submitForm.addEventListener('submit', roverPhotos)
 let cameraSelect = document.querySelector('#cameraSelect');
 let infoDiv = document.querySelector('#info')
 let totalImg = document.querySelector('#totalImg')
 infoDiv.style.display = 'none'
+let pageNumber = 1;
+submitForm.addEventListener('submit', roverPhotos, totalImage)
 
-function roverPhotos(e) {
+let imageCount = 0;
+
+function totalImage(e) {
     e.preventDefault();
     if (cameraSelect.value == 0) {
         url = baseURL + dateOfPhotos.value + '&api_key=' + apiKey
+        console.log('URL: ', url);
+        fetch(url)
+            .then(function (result) {
+                return result.json();
+            })
+            .then(function (json) {
+                imageCount = json.photos.length 
+            })
+        } else {
+            url = baseURL + dateOfPhotos.value + '&camera=' + cameraSelect.value  +'&api_key=' + apiKey
+            console.log('URL: ', url);
+            fetch(url)
+            .then(function (result) {
+                return result.json();
+            })
+            .then(function (json) {
+                imageCount = json.photos.length
+            })
+    }
+}
+function roverPhotos(e) {
+    e.preventDefault();
+    if (cameraSelect.value == 0) {
+        url = baseURL + dateOfPhotos.value + '&page=' + pageNumber + '&api_key=' + apiKey
         console.log('URL: ', url);
         fetch(url)
             .then(function (result) {
@@ -39,7 +66,7 @@ function roverPhotos(e) {
                 displayPhotos(json);
             })
     } else {
-        url = baseURL + dateOfPhotos.value + '&camera=' + cameraSelect.value + '&api_key=' + apiKey
+        url = baseURL + dateOfPhotos.value + '&camera=' + cameraSelect.value  + '&page=' + pageNumber +'&api_key=' + apiKey
         console.log('URL: ', url);
         fetch(url)
             .then(function (result) {
@@ -93,7 +120,7 @@ function displayPhotos(json) {
             cardBody.appendChild(idNum)
             console.log(imageDiv);
         }
-        totalImg.innerText = 'Total IMG: ' + json.photos.length
+        
     }
 
 }
