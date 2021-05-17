@@ -1,6 +1,20 @@
 .form-select{
     width: 20vw;
 }
+
+
 body{
     background-image: url(https://wallpapercave.com/wp/wp2461878.jpg);
+}
+
+#introSection{
+    color: antiquewhite;
+}
+
+#constraints{
+    color: antiquewhite;
+}
+
+#info{
+    color: antiquewhite;
 }
