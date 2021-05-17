@@ -98,4 +98,12 @@ function displayPhotos(json) {
 
 }
 
+// let i=0;
+// let txt = 'Use this site to see photos from the Mars Curiosity Rover by date as well as by camera. The Curiosity Rover landed on August 6, 2012, so photos before that date will not be available.';
+// let speed = 50;
 
+// function typeWriter(){
+//     if (i < txt.length){document.getElementById(thisText).innerHTML += txt.charAt(i); i++;
+//     setTimeout(typeWriter, speed);
+//     }
+// }
