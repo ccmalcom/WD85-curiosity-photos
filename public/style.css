@@ -75,3 +75,8 @@ body{
     width: 90vw;
     margin: 0 auto 0 auto;
 }
+
+.card-img-top{
+    min-height: 238.05px;
+}
+
